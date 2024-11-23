@@ -1,4 +1,3 @@
-<!-- res/layout/activity_main.xml -->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -44,6 +43,18 @@
             android:textColor="#0A2423"
             android:fontFamily="@font/bold"
             android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/irParaEnderecosTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ir para a página de endereços"
+            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="16dp"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             style="?android:attr/buttonBarStyle"
@@ -98,13 +109,13 @@
             android:paddingBottom="8dp" />
 
         <LinearLayout
-            android:id="@+id/listaEstacoesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:id="@+id/listaEstacoesLayout"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/round_button"
@@ -116,7 +127,7 @@
                     android:id="@+id/estacaoTituloTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/esta_o_de_recarga_tal"
+                    android:text=""
                     android:fontFamily="@font/semibold"
                     android:textColor="#0A2423"
                     android:textSize="14sp" />
@@ -126,83 +137,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="@string/_1_2km_de_voc"
+                    android:text=""
                     android:fontFamily="@font/semibold"
                     android:textColor="#0A2423"
                     android:textSize="12sp" />
 
-                <Button
-                    android:id="@+id/detalhesButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_dark_green"
-                    android:text="@string/detalhes"
-                    android:fontFamily="@font/bold"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="8dp" />
             </LinearLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#162D2C"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#253939"
-            android:elevation="4dp">
-
-            <TextView
-                android:id="@+id/infoTituloTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Estação de Recarga Tal"
-                android:fontFamily="@font/semibold"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:id="@+id/infoEnderecoTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/endere_o_n_o_sei_na_onde_176_0922_093"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:fontFamily="@font/semibold"
-                android:layout_marginBottom="4dp" />
-
-            <TextView
-                android:id="@+id/infoPrecoTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/pre_os_variam_de_r_12_04_a_r_23_00"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:fontFamily="@font/semibold"
-                android:layout_marginBottom="4dp" />
-
-            <TextView
-                android:id="@+id/infoHorarioTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/de_seg_a_dom_das_08h30_s_18h30"
-                android:fontFamily="@font/semibold"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:layout_marginBottom="4dp" />
-
-            <TextView
-                android:id="@+id/infoPagamentoTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/aceita_cart_es_de_cr_dito_d_bito_e_pix"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/semibold"
-                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Botão para adicionar endereço -->
         <TextView
             android:id="@+id/adicionarEnderecoTextView"
             android:layout_width="wrap_content"
@@ -22,7 +21,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
-        <!-- Mensagem ou título -->
         <TextView
             android:id="@+id/enderecosCadastradosTextView"
             android:layout_width="wrap_content"
@@ -33,7 +31,6 @@
             android:textSize="16sp"
             android:layout_marginBottom="8dp" />
 
-        <!-- Container dinâmico -->
         <LinearLayout
             android:id="@+id/containerEnderecos"
             android:layout_width="match_parent"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="Endereço"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="Cidade"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="Estado"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editCep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="CEP"
+        android:inputType="textPostalAddress" />
+</LinearLayout>

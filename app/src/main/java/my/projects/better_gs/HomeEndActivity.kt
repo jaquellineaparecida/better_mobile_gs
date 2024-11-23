@@ -1,9 +1,11 @@
 package my.projects.better_gs
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.ScrollView
@@ -24,32 +26,25 @@ class HomeEndActivity : AppCompatActivity() {
         setContentView(R.layout.end_home)
         supportActionBar?.hide()
 
-        // Inicialização do Firebase Firestore
         db = FirebaseFirestore.getInstance()
 
-        // Inicialização dos componentes do layout
         containerEnderecos = findViewById(R.id.containerEnderecos)
         mensagemSemEnderecos = findViewById(R.id.enderecosCadastradosTextView)
         adicionarEnderecoTextView = findViewById(R.id.adicionarEnderecoTextView)
 
-        // Configurar clique no botão de adicionar endereço
         adicionarEnderecoTextView.setOnClickListener {
             val intent = Intent(this, CadastroEnderecoActivity::class.java)
             startActivity(intent)
         }
 
-        // Carregar os endereços ao iniciar a Activity
         carregarEnderecos()
     }
 
     private fun carregarEnderecos() {
-        // Limpar o container antes de recarregar os dados
         containerEnderecos.removeAllViews()
 
-        // Buscar dados do Firestore
         db.collection("TB_ENDERECO").get().addOnSuccessListener { result ->
             if (result.isEmpty) {
-                // Exibir mensagem se não houver endereços
                 mensagemSemEnderecos.visibility = View.VISIBLE
                 mensagemSemEnderecos.text = "Nenhum endereço cadastrado"
             } else {
@@ -82,27 +77,74 @@ class HomeEndActivity : AppCompatActivity() {
         estadoDetalhes.text = "Estado: ${endereco.estado}"
         cepDetalhes.text = "CEP: ${endereco.cep}"
 
-        // Configurar clique no botão de excluir
         excluirButton.setOnClickListener {
             excluirEndereco(docId)
         }
 
-        // Configurar clique no botão de editar
         editarButton.setOnClickListener {
-            val intent = Intent(this, CadastroEnderecoActivity::class.java)
-            intent.putExtra("enderecoId", docId)
-            startActivity(intent)
+            mostrarDialogoEdicaoEndereco(endereco, docId)
         }
 
-        // Adicionar a view ao container
         containerEnderecos.addView(view)
     }
 
+    private fun mostrarDialogoEdicaoEndereco(endereco: Endereco, enderecoId: String) {
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_editar_endereco, null)
+
+        val enderecoEditText = dialogView.findViewById<EditText>(R.id.editEndereco)
+        val cidadeEditText = dialogView.findViewById<EditText>(R.id.editCidade)
+        val estadoEditText = dialogView.findViewById<EditText>(R.id.editEstado)
+        val cepEditText = dialogView.findViewById<EditText>(R.id.editCep)
+
+        enderecoEditText.setText(endereco.endereco)
+        cidadeEditText.setText(endereco.cidade)
+        estadoEditText.setText(endereco.estado)
+        cepEditText.setText(endereco.cep)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Editar Endereço")
+        builder.setView(dialogView)
+
+        builder.setNegativeButton("Cancelar") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.setPositiveButton("Salvar") { dialog, _ ->
+            val novoEndereco = enderecoEditText.text.toString()
+            val novaCidade = cidadeEditText.text.toString()
+            val novoEstado = estadoEditText.text.toString()
+            val novoCep = cepEditText.text.toString()
+
+            atualizarEndereco(enderecoId, novoEndereco, novaCidade, novoEstado, novoCep)
+            dialog.dismiss()
+        }
+
+        builder.show()
+    }
+
+    private fun atualizarEndereco(enderecoId: String, novoEndereco: String, novaCidade: String, novoEstado: String, novoCep: String) {
+        val enderecoAtualizado = hashMapOf<String, Any>(
+            "endereco" to novoEndereco,
+            "cidade" to novaCidade,
+            "estado" to novoEstado,
+            "cep" to novoCep
+        )
+
+        db.collection("TB_ENDERECO").document(enderecoId)
+            .update(enderecoAtualizado as Map<String, Any>)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Endereço atualizado com sucesso.", Toast.LENGTH_SHORT).show()
+                carregarEnderecos()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Erro ao atualizar o endereço.", Toast.LENGTH_SHORT).show()
+            }
+    }
+
     private fun excluirEndereco(docId: String) {
-        // Excluir endereço no Firestore
         db.collection("TB_ENDERECO").document(docId).delete().addOnSuccessListener {
             Toast.makeText(this, "Endereço excluído.", Toast.LENGTH_SHORT).show()
-            carregarEnderecos() // Recarregar endereços
+            carregarEnderecos()
         }.addOnFailureListener {
             Toast.makeText(this, "Erro ao excluir endereço.", Toast.LENGTH_SHORT).show()
         }

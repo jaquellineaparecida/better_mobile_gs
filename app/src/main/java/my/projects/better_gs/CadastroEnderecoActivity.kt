@@ -59,7 +59,7 @@ class CadastroEnderecoActivity : AppCompatActivity() {
         db.collection("TB_ENDERECO").add(novoEndereco)
             .addOnSuccessListener {
                 Toast.makeText(this, "Endereço cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
-                finish() // Fecha a activity após o cadastro
+                finish()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Erro ao cadastrar endereço.", Toast.LENGTH_SHORT).show()

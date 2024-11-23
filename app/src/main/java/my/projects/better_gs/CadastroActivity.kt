@@ -67,7 +67,7 @@ class CadastroActivity : AppCompatActivity() {
             .set(usuario)
             .addOnSuccessListener {
                 Toast.makeText(this, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                finish() // Fecha a Activity após o cadastro
+                finish()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Erro ao salvar dados no Firestore: ${e.message}", Toast.LENGTH_SHORT).show()
