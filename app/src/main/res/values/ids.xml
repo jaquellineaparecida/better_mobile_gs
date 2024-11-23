@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tagEnderecoTextView" type="id" />
+    <item name="enderecoDetalhesTextView" type="id" />
+    <item name="cidadeDetalhesTextView" type="id" />
+    <item name="estadoDetalhesTextView" type="id" />
+    <item name="cepDetalhesTextView" type="id" />
+    <item name="excluirEnderecoButton" type="id" />
+    <item name="editarEnderecoButton" type="id" />
+</resources>

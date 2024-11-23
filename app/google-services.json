@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "137958063238",
+    "project_id": "better-fiap",
+    "storage_bucket": "better-fiap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137958063238:android:617d787d1ab49b75716507",
+        "android_client_info": {
+          "package_name": "my.projects.better_gs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALQ825fnfL69ergE_6oKVle2w9psxhVyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,132 @@
+<!-- res/layout/activity_cadastro.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#253939"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/better"
+        android:contentDescription="@string/log" />
+
+    <LinearLayout
+        android:id="@+id/formLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nomeCompletoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/nome_completo"
+            android:background="@drawable/input"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/dataNascimentoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/data_de_nasc"
+            android:background="@drawable/input"
+            android:padding="12dp"
+            android:inputType="date"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/cpfEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/cpf"
+            android:background="@drawable/input"
+            android:padding="12dp"
+            android:inputType="number"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/telefoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/telefone"
+            android:background="@drawable/input"
+            android:padding="12dp"
+            android:inputType="phone"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/email"
+            android:background="@drawable/input"
+            android:padding="12dp"
+            android:inputType="textEmailAddress"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/senhaEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints=""
+            android:hint="@string/senha"
+            android:background="@drawable/input"
+            android:padding="12dp"
+            android:inputType="textPassword"
+            android:textColor="#253939"
+            android:textColorHint="#000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Button
+            android:id="@+id/cadastrarButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/input"
+            android:text="@string/cadastrar"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

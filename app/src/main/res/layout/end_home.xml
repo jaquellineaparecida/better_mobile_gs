@@ -1,0 +1,48 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Botão para adicionar endereço -->
+        <TextView
+            android:id="@+id/adicionarEnderecoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adicionar_um_endere_o"
+            android:fontFamily="@font/bold"
+            android:textColor="#0A2423"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Mensagem ou título -->
+        <TextView
+            android:id="@+id/enderecosCadastradosTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/endere_os_cadastrados"
+            android:textColor="#0A2423"
+            android:fontFamily="@font/bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Container dinâmico -->
+        <LinearLayout
+            android:id="@+id/containerEnderecos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#B6DB1D"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+</ScrollView>

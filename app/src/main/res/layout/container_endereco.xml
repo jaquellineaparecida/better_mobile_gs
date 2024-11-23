@@ -1,0 +1,73 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/round_button"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tagEnderecoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tag"
+        android:textStyle="bold"
+        android:textColor="#0A2423"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/enderecoDetalhesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço"
+        android:textColor="#0A2423"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/cidadeDetalhesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade"
+        android:textColor="#0A2423"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/estadoDetalhesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textColor="#0A2423"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/cepDetalhesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CEP"
+        android:textColor="#0A2423"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <ImageButton
+            android:id="@+id/excluirEnderecoButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/excluir"
+            android:src="@drawable/delete" />
+
+        <ImageButton
+            android:id="@+id/editarEnderecoButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/editar"
+            android:src="@drawable/edit" />
+    </LinearLayout>
+</LinearLayout>
